@@ -16,14 +16,14 @@ normalized = image / 255
 for gamma in gamma_list:
 
     # thresholding
-    thresh = c * np.power(image, gamma)
+    thresh = c * np.power(normalized, gamma)
     cv2.imshow('gamma-{:.3}'.format(gamma), thresh)
     cv2.waitKey()
 
 for gamma in gamma_list:
 
     # thresholding
-    thresh = c / (np.power(image, gamma) + d)
+    thresh = c / (np.power(normalized, gamma) + d)
     cv2.imshow('gamma-{:.3}'.format(gamma), thresh)
     cv2.waitKey()
 
